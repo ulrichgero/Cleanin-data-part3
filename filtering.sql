@@ -3,4 +3,9 @@
 SELECT * 
 FROM data_2020
 WHERE Area = 'Benin';
--- Using Wildcard, we can also filter data from countries with special letter  unsing LIKE
+-- Using Wildcard, we can also filter data from countries with special letter where  
+-- the first letter in the name is C unsing LIKE operator
+
+SELECT *
+FROM data_2020
+WHERE Area LIKE 'c%'; -- this return all countries with letter C
