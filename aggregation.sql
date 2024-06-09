@@ -17,3 +17,12 @@ order by Value DESC;
 SELECT COUNT(DISTINCT Value)
 FROM data_2022
 WHERE Area = 'Benin' ;
+
+
+
+-- We can also use the emplpyees data to perform some query
+SELECT COUNT(age), 
+MIN(age),
+MAX(age),
+AVG(age) 
+FROM employees_demogra;
