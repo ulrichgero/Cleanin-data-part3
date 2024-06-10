@@ -33,3 +33,14 @@ SELECT COUNT(DISTINCT sal.salary),
 FROM employees_demogra dem
 JOIN employees_salary sal
 	ON dem.employee_id = sal.employee_id;
+
+-- Let perform some windows function
+
+SELECT dem.gender,
+dem.first_name, 
+dem.last_name, 
+SUM(salary) OVER(partition by gender) AS Sum_salary
+FROM simpleDB.employees_salary sal
+JOIN simpleDB.employees_demogra dem
+ ON sal.employee_id = dem.employee_id
+ORDER BY salary desc;
