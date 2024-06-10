@@ -20,9 +20,16 @@ WHERE Area = 'Benin' ;
 
 
 
--- We can also use the emplpyees data to perform some query
-SELECT COUNT(age), 
+-- We can also use the emplpyees data to perform some aggregate query
+SELECT COUNT(distinct age), 
 MIN(age),
 MAX(age),
 AVG(age) 
 FROM employees_demogra;
+
+SELECT COUNT(DISTINCT sal.salary),
+ MIN(sal.salary),
+ MAX(sal.salary)
+FROM employees_demogra dem
+JOIN employees_salary sal
+	ON dem.employee_id = sal.employee_id;
