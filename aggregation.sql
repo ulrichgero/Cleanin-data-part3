@@ -47,3 +47,20 @@ JOIN simpleDB.employees_demogra dem
  ON sal.employee_id = dem.employee_id
 ORDER BY salary desc
 LIMIT 10;
+
+-- Adding come CTE to it.
+
+WITH CTE_example AS (
+SELECT dem.gender, 
+AVG(salary) avg_sal, 
+MAX(salary) max_sal, 
+MIN(salary) min_sal, 
+COUNT(salary) 
+FROM employees_demogra dem
+JOIN employees_salary sal
+  ON dem.employee_id = sal.employee_id
+GROUP BY gender
+)
+SELECT avg(avg_sal)
+FROM CTE_example
+;
