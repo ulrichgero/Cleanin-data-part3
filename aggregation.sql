@@ -38,9 +38,12 @@ JOIN employees_salary sal
 
 SELECT dem.gender,
 dem.first_name, 
-dem.last_name, 
+dem.last_name,
+salary,
+SUM(salary) OVER () AS total_salary,
 SUM(salary) OVER(partition by gender) AS Sum_salary
 FROM simpleDB.employees_salary sal
 JOIN simpleDB.employees_demogra dem
  ON sal.employee_id = dem.employee_id
-ORDER BY salary desc;
+ORDER BY salary desc
+LIMIT 10;
