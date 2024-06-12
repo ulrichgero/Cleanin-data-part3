@@ -1,4 +1,4 @@
-# FUll SQL data cleaning with mySQL
+# Full SQL data cleaning with mySQL
 
 Full data cleaning with SQL
 In this project, we are going to clean, sort, filter, join, transform column 
